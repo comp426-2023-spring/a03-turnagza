@@ -51,13 +51,13 @@ switch(locz) {
             process.exit(0);
         } else {
             console.log("unknown input");
-            printHelp();
-            printRules();
+            hlp();
+            rlz();
             process.exit(0);
         }
     default:
         console.log("out of range");
-        printHelp();
-        printRules();
+        hlp();
+        rlz();
         process.exit(0);
 }
