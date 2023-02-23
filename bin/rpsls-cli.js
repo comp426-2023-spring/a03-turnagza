@@ -44,12 +44,28 @@ function rlz() {
     console.log(rulz);
 }
 
-var locz = args._[0];
+var locz = args._length;
 
-try {
-    console.log(JSON.stringify(rpsls(locz)));
-} catch (error) {
-    hlp();
-    rlz();
-    process.exit(1);
+switch(locz) {
+    case locz == 0:
+        console.log(JSON.stringify(rpsls("none")));
+        process.exit(0);
+    case locz == 1:
+        var player = args._[0].toString().toLowerCase();
+        if(player=="rock" || player=="paper" || player=="scissors" || player=="lizard" || player=="spock")
+        {
+            console.log(JSON.stringify(rpsls(player)));
+            process.exit(0);
+        } else {
+            console.log("unknown input");
+            printHelp();
+            printRules();
+            process.exit(0);
+        }
+    default:
+        console.log("out of range");
+        printHelp();
+        printRules();
+        process.exit(0);
 }
+
